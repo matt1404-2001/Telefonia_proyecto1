@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 17px Arial, sans-serif; fill: #4b5563; }
+      .label { font: 600 16px Arial, sans-serif; fill: #111827; }
+      .small { font: 500 14px Arial, sans-serif; fill: #374151; }
+      .system-title { font: 700 21px Arial, sans-serif; fill: #111827; }
+      .actor-label { font: 600 16px Arial, sans-serif; fill: #111827; }
+      .include { font: 600 13px Arial, sans-serif; fill: #6b7280; }
+      .line { stroke: #374151; stroke-width: 2; fill: none; }
+      .dash { stroke: #6b7280; stroke-width: 2; fill: none; stroke-dasharray: 8 6; marker-end: url(#arrow); }
+      .assoc { stroke: #374151; stroke-width: 2; fill: none; }
+      .system { fill: #f9fafb; stroke: #111827; stroke-width: 2.5; rx: 18; }
+      .usecase { fill: #ffffff; stroke: #2563eb; stroke-width: 2.2; }
+      .actor-fill { fill: #ffffff; stroke: #111827; stroke-width: 2; }
+      .db { fill: #eef2ff; stroke: #4338ca; stroke-width: 2; }
+      .file { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1050" fill="#ffffff"/>
+
+  <text x="800" y="50" text-anchor="middle" class="title">Diagrama de Casos de Uso - Proveedor Telefonico XYZ</text>
+  <text x="800" y="78" text-anchor="middle" class="subtitle">Componente Java: PROVEEDOR1, PROVEEDOR2 y PROVEEDOR3</text>
+
+  <!-- External actors -->
+  <g transform="translate(120,250)">
+    <circle cx="60" cy="35" r="24" class="actor-fill"/>
+    <line x1="60" y1="59" x2="60" y2="125" class="line"/>
+    <line x1="20" y1="85" x2="100" y2="85" class="line"/>
+    <line x1="60" y1="125" x2="25" y2="185" class="line"/>
+    <line x1="60" y1="125" x2="95" y2="185" class="line"/>
+    <text x="60" y="220" text-anchor="middle" class="actor-label">Identificador</text>
+    <text x="60" y="242" text-anchor="middle" class="actor-label">Python</text>
+  </g>
+
+  <g transform="translate(1395,230)">
+    <ellipse cx="65" cy="18" rx="65" ry="18" class="db"/>
+    <rect x="0" y="18" width="130" height="95" class="db"/>
+    <ellipse cx="65" cy="113" rx="65" ry="18" class="db"/>
+    <line x1="0" y1="18" x2="0" y2="113" stroke="#4338ca" stroke-width="2"/>
+    <line x1="130" y1="18" x2="130" y2="113" stroke="#4338ca" stroke-width="2"/>
+    <text x="65" y="60" text-anchor="middle" class="actor-label">SQL Server</text>
+    <text x="65" y="82" text-anchor="middle" class="small">BD Telefonia</text>
+  </g>
+
+  <g transform="translate(1390,780)">
+    <path d="M0,0 H130 L160,30 V145 H0 Z" class="file"/>
+    <path d="M130,0 V30 H160" fill="none" stroke="#047857" stroke-width="2"/>
+    <text x="80" y="65" text-anchor="middle" class="actor-label">Archivo de</text>
+    <text x="80" y="88" text-anchor="middle" class="actor-label">Bitacora</text>
+    <text x="80" y="114" text-anchor="middle" class="small">.txt</text>
+  </g>
+
+  <!-- System rectangle -->
+  <rect x="330" y="125" width="950" height="845" class="system"/>
+  <text x="805" y="160" text-anchor="middle" class="system-title">Proveedor Telefonico XYZ - Java</text>
+
+  <!-- Use cases -->
+  <g id="uc1">
+    <ellipse cx="565" cy="245" rx="145" ry="42" class="usecase"/>
+    <text x="565" y="240" text-anchor="middle" class="label">Verificar saldo</text>
+    <text x="565" y="262" text-anchor="middle" class="label">telefonico</text>
+  </g>
+
+  <g id="uc2">
+    <ellipse cx="565" cy="380" rx="145" ry="42" class="usecase"/>
+    <text x="565" y="386" text-anchor="middle" class="label">Autorizar llamada</text>
+  </g>
+
+  <g id="uc3">
+    <ellipse cx="565" cy="515" rx="145" ry="42" class="usecase"/>
+    <text x="565" y="521" text-anchor="middle" class="label">Consultar saldo</text>
+  </g>
+
+  <g id="uc4">
+    <ellipse cx="565" cy="650" rx="145" ry="42" class="usecase"/>
+    <text x="565" y="656" text-anchor="middle" class="label">Registrar llamada</text>
+  </g>
+
+  <g id="uc5">
+    <ellipse cx="565" cy="785" rx="145" ry="42" class="usecase"/>
+    <text x="565" y="780" text-anchor="middle" class="label">Rebajar saldo</text>
+    <text x="565" y="802" text-anchor="middle" class="label">prepago</text>
+  </g>
+
+  <g id="uc6">
+    <ellipse cx="1010" cy="815" rx="150" ry="42" class="usecase"/>
+    <text x="1010" y="821" text-anchor="middle" class="label">Registrar bitacora</text>
+  </g>
+
+  <g id="uc7">
+    <ellipse cx="1005" cy="380" rx="145" ry="42" class="usecase"/>
+    <text x="1005" y="386" text-anchor="middle" class="label">Calcular tarifa</text>
+  </g>
+
+  <g id="uc8">
+    <ellipse cx="1005" cy="250" rx="175" ry="48" class="usecase"/>
+    <text x="1005" y="239" text-anchor="middle" class="label">Determinar grupo</text>
+    <text x="1005" y="261" text-anchor="middle" class="label">tarifario internacional</text>
+  </g>
+
+  <g id="uc9">
+    <ellipse cx="1005" cy="515" rx="170" ry="48" class="usecase"/>
+    <text x="1005" y="504" text-anchor="middle" class="label">Determinar destino</text>
+    <text x="1005" y="526" text-anchor="middle" class="label">fijo o movil</text>
+  </g>
+
+  <!-- Associations from Identificador -->
+  <line x1="280" y1="350" x2="420" y2="245" class="assoc"/>
+  <line x1="280" y1="360" x2="420" y2="380" class="assoc"/>
+  <line x1="280" y1="372" x2="420" y2="515" class="assoc"/>
+  <line x1="280" y1="384" x2="420" y2="650" class="assoc"/>
+
+  <!-- Includes -->
+  <path d="M700,380 C760,372 805,372 860,380" class="dash"/>
+  <text x="780" y="360" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M995,338 C995,315 998,300 1002,298" class="dash"/>
+  <text x="1088" y="322" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M1005,422 C1005,442 1005,455 1005,467" class="dash"/>
+  <text x="1095" y="450" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M565,692 C565,720 565,740 565,743" class="dash"/>
+  <text x="665" y="730" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M690,245 C800,350 900,650 960,775" class="dash"/>
+  <text x="840" y="505" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M700,380 C810,500 900,675 960,785" class="dash"/>
+  <text x="850" y="600" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M705,515 C810,610 900,720 960,795" class="dash"/>
+  <text x="850" y="690" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M700,650 C805,700 900,755 960,805" class="dash"/>
+  <text x="828" y="750" text-anchor="middle" class="include">&lt;&lt;include&gt;&gt;</text>
+
+  <!-- Associations to SQL Server -->
+  <line x1="710" y1="245" x2="1395" y2="270" class="assoc"/>
+  <line x1="710" y1="380" x2="1395" y2="292" class="assoc"/>
+  <line x1="710" y1="515" x2="1395" y2="315" class="assoc"/>
+  <line x1="710" y1="650" x2="1395" y2="335" class="assoc"/>
+  <line x1="710" y1="785" x2="1395" y2="350" class="assoc"/>
+  <line x1="1150" y1="380" x2="1395" y2="300" class="assoc"/>
+  <line x1="1180" y1="250" x2="1395" y2="255" class="assoc"/>
+
+  <!-- Association to bitacora file -->
+  <line x1="1160" y1="815" x2="1390" y2="850" class="assoc"/>
+
+  <!-- Legend -->
+  <rect x="60" y="920" width="270" height="80" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" rx="10"/>
+  <line x1="85" y1="948" x2="145" y2="948" class="assoc"/>
+  <text x="158" y="953" class="small">asociacion</text>
+  <line x1="85" y1="978" x2="145" y2="978" class="dash"/>
+  <text x="158" y="983" class="small">include</text>
+</svg>
