@@ -26,15 +26,11 @@ Primer alcance - Sistema base.
 
 Para la primera parte del proyecto se debe trabajar en los siguientes elementos:
 
-1.  Base de datos del sistema identificador (modelo relacional en MySQL).
-
-2.  Base de datos del proveedor telefónico XYZ (Modelo relacional en SQL Server).
-
-3.  Software Identificador de teléfonos.
-
-4.  Componente del Proveedor telefónico XYZ.
-
-5.  Simulador de llamadas.
+1. Base de datos del sistema identificador (modelo relacional en MySQL).
+2. Base de datos del proveedor telefónico XYZ (Modelo relacional en SQL Server).
+3. Software Identificador de teléfonos.
+4. Componente del Proveedor telefónico XYZ.
+5. Simulador de llamadass.
 
 La idea es que los modelos de base de datos propuestos para cada uno de los sistemas
 
@@ -48,7 +44,8 @@ Página 1
 
 II Cuatrimestre, 2025
 
-A continuación, se detallas las historias de usuario y los criterios de aceptación que
+
+A continuación, se detallas las historias de usuario y los criterios de aceptación que
 
 las acompañan.
 
@@ -72,7 +69,7 @@ Autorizar inicio de llamadas
 
 Criterios de aceptación
 
-1.  El Proveedor debe recibir una trama en formato de texto plano proveniente del
+1. El Proveedor debe recibir una trama en formato de texto plano proveniente del
 
 Identificador que contendrá los datos que se requieren para verificar si el número
 
@@ -80,7 +77,7 @@ de teléfono tiene los fondos suficientes para realizar  una llamada o bien, par
 
 consultar su saldo disponible.
 
-2.  La trama debe incluir:
+2. La trama debe incluir:
 
 Tipo de transacción (ocupa un espacio)  1: Llamada
 
@@ -92,13 +89,10 @@ Ejemplo: 25743715
 
 Tipo de llamada
 
-1.  Mismo proveedor
-
-2.  Otro proveedor
-
-3.  Fuera del país
-
-3.  Al recibir los datos de la trama, si el tipo de transacción es llamada entonces:
+1. Mismo proveedor
+2. Otro proveedor
+3. Fuera del país
+4. Al recibir los datos de la trama, si el tipo de transacción es llamada entonces:
 
 a.  Debe  verificar  si  es  un  servicio  de  telefonía  postpago  la  llamada  es
 
@@ -120,7 +114,8 @@ Página 2
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 Grupo  D  (Europa,  Singapur,  Tailandia,  Australia  y  Nueva  Zelanda)  con
 
@@ -164,7 +159,7 @@ c.  Si no hay fondos suficientes se debe responder “INSUF”.
 
 d.  Cualquier otra situación se debe responder “ERROR”.
 
-4.  Si el tipo de transacción es consulta entonces:
+4. Si el tipo de transacción es consulta entonces:
 
 a.  Si el servicio es de postpago se responde “OK” y el monto va en -1. En caso
 
@@ -178,13 +173,14 @@ se asume que los dos últimos dígitos son los decimales. Para completar
 
 los  19  espacios  se  debe  rellenar  con  ceros  a  la  izquierda.  Ejemplo:
 
-000000000009765425.
+000000000009765425\.
 
 Página 3
 
 II Cuatrimestre, 2025
 
-b.  Cualquier otra situación se debe responder “ERROR”.
+
+b.  Cualquier otra situación se debe responder “ERROR”.
 
 Programación IV
 
@@ -206,13 +202,13 @@ Registrar el cobro y rebajo de saldos
 
 Criterios de aceptación
 
-1.  El Proveedor debe recibir una trama en formato de texto plano proveniente del
+1. El Proveedor debe recibir una trama en formato de texto plano proveniente del
 
 autorizador que contendrá los datos que se requieren para registrar los  cobros
 
 (postpago) o los rebajos a saldos (prepago).
 
-2.  La trama debe incluir:
+2. La trama debe incluir:
 
 Tipo de transacción (ocupa un espacio)  1: Rebajo de saldo
 
@@ -278,19 +274,20 @@ Página 4
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 minutos,  y  los  últimos  dos  para  los
 
 segundos, sin usar los dos puntos.
 
-3.  Con estos datos debe registrar la información de la llamada. Esto aplica a ambos
+3. Con estos datos debe registrar la información de la llamada. Esto aplica a ambos
 
 servicios. En caso de ser una llamada desde un servicio prepago, debe hacer un
 
 rebajo al saldo.
 
-4.  Si la operación es exitosa debe responder “OK”, de lo contrario debe responder
+4. Si la operación es exitosa debe responder “OK”, de lo contrario debe responder
 
 “ERROR”.
 
@@ -312,15 +309,15 @@ Dejar rastros de auditoría de las operaciones
 
 Criterios de aceptación
 
-1.  El Proveedor debe llevar una bitácora de operaciones que se almacenará en el
+1. El Proveedor debe llevar una bitácora de operaciones que se almacenará en el
 
 servidor en un archivo de texto.
 
-2.  Los  datos  que  se  escribirán  en  la  bitácora  serán  de  acuerdo  con  la  solicitud
+2. Los  datos  que  se  escribirán  en  la  bitácora  serán  de  acuerdo  con  la  solicitud
 
 recibida
 
-3.  El formato del registro de estos datos de la bitácora debe ser JSON y almacenado
+3. El formato del registro de estos datos de la bitácora debe ser JSON y almacenado
 
 así, por ejemplo:
 
@@ -328,7 +325,7 @@ así, por ejemplo:
 
 “TelefonoDestino”: 89154242, “Costo”: 15000000, “Duracion”: “001025” }
 
-4.  El registro de bitácora debe realizarse en segundo plano en un hilo independiente
+4. El registro de bitácora debe realizarse en segundo plano en un hilo independiente
 
 y no debe interrumpir la ejecución de las operaciones del  proveedor de servicios
 
@@ -336,7 +333,7 @@ telefónico.  Las  solicitudes  de  escritura  en  bitácora  deben  “encolars
 
 poder acceder al archivo de bitácora de forma ordenada y evitar bloqueos.
 
-5.  Se debe registrar bitácora para todo tipo de transacción tanto tramas de entrada
+5. Se debe registrar bitácora para todo tipo de transacción tanto tramas de entrada
 
 como tramas de salida.
 
@@ -344,7 +341,8 @@ Página 5
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 ID
 
@@ -364,7 +362,7 @@ Atender las solicitudes de la red de telefonía
 
 Criterios de aceptación
 
-1.  El autorizador debe recibir una trama en formato XML o JSON que incorpore la
+1. El autorizador debe recibir una trama en formato XML o JSON que incorpore la
 
 siguiente información:
 
@@ -384,7 +382,7 @@ e.  Tipo de transacción (Ejemplo: solicitud).
 
 f.  Teléfono destino.
 
-2.  Deben realizarse las siguientes validaciones contra la base de datos del sistema
+2. Deben realizarse las siguientes validaciones contra la base de datos del sistema
 
 identificación:
 
@@ -414,7 +412,8 @@ Página 6
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 g.  Si alguno de los datos no es válido, debe indicar alguno de los siguientes
 
@@ -434,7 +433,7 @@ v.  5. Código de país inválido.
 
 vi.  5: Error no controlado.
 
-3.  Al  recibir  una  transacción  si  todas  las  validaciones  anteriores  son  correctas
+3. Al  recibir  una  transacción  si  todas  las  validaciones  anteriores  son  correctas
 
 entonces:
 
@@ -458,7 +457,7 @@ formato de 6 dígitos sin puntos. Ejemplo: {“status”: “OK”, “tiempo”
 
 012310}.
 
-4.  Si el tipo de transacción es saldo entonces:
+4. Si el tipo de transacción es saldo entonces:
 
 a.  Verificar el saldo con el proveedor telefónico, y responder con una trama
 
@@ -478,7 +477,8 @@ Página 7
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 Anotaciones técnicas:
 
@@ -508,7 +508,7 @@ Atender el aviso donde indica el inicio de una llamada telefónica
 
 Criterios de aceptación
 
-1.  El identificador debe recibir una trama en formato XML o JSON que incorpore la
+1. El identificador debe recibir una trama en formato XML o JSON que incorpore la
 
 siguiente información:
 
@@ -526,7 +526,7 @@ f.  Teléfono destino.
 
 g.  Tiempo máximo.
 
-2.  Como las validaciones fueron realizadas en un proceso anterior, en este caso se
+2. Como las validaciones fueron realizadas en un proceso anterior, en este caso se
 
 procede  a  contabilizar  el  inicio  de  la  llamada,  para  lo  cual  se  registra  la
 
@@ -548,7 +548,8 @@ Página 8
 
 II Cuatrimestre, 2025
 
-•  Se mantienen las indicaciones técnicas expresadas en HU Identificador1.
+
+•  Se mantienen las indicaciones técnicas expresadas en HU Identificador1.
 
 •  El recurso que implemente la lista o información de las llamadas activas debe
 
@@ -576,7 +577,7 @@ Facilitar el fin de una llamada
 
 Criterios de aceptación
 
-1.  Una  llamada  telefónica  puede  terminar  por  múltiples  razones,  dentro  de  ellas
+1. Una  llamada  telefónica  puede  terminar  por  múltiples  razones,  dentro  de  ellas
 
 están:
 
@@ -586,7 +587,7 @@ b.  Se termina el tiempo según el saldo de un servicio prepago.
 
 c.  El cliente decide terminar la llamada desde el dispositivo.
 
-2.  El  Identificador,  debe  contar  con  un  proceso  que  esté  revisando  la  lista  de
+2. El  Identificador,  debe  contar  con  un  proceso  que  esté  revisando  la  lista  de
 
 llamadas activas cada cierta cantidad de tiempo, dado que la lista se encuentra
 
@@ -606,7 +607,7 @@ registre los movimientos respectivos (registro de llamada, rebajo de saldo
 
 en caso requerido). UH Proveedor2
 
-3.  En el caso en que la conexión es interrumpida o porque el cliente decide terminar
+3. En el caso en que la conexión es interrumpida o porque el cliente decide terminar
 
 la llamada se debe recibir una trama en formato XML o JSON que incorpore la
 
@@ -616,7 +617,8 @@ Página 9
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 a.  Número de teléfono (debe enviarse y almacenarse cifrado).
 
@@ -652,7 +654,8 @@ Página 10
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 ID
 
@@ -722,7 +725,8 @@ Página 11
 
 II Cuatrimestre, 2025
 
-Programación IV
+
+Programación IV
 
 ii.  2: Datos de tarjeta telefónica no coinciden.
 
@@ -774,11 +778,11 @@ Dejar rastros de auditoría de las operaciones
 
 Criterios de aceptación
 
-6.  El identificador debe llevar una bitácora de operaciones que se almacenará en el
+6. El identificador debe llevar una bitácora de operaciones que se almacenará en el
 
 servidor en un archivo de texto.
 
-7.  Los datos que se escribirán en la bitácora serán:
+7. Los datos que se escribirán en la bitácora serán:
 
 a.  Número de teléfono.
 
@@ -788,7 +792,8 @@ Página 12
 
 II Cuatrimestre, 2025
 
-c.  Identificador de la tarjeta (debe enviarse y almacenarse cifrado).
+
+c.  Identificador de la tarjeta (debe enviarse y almacenarse cifrado).
 
 d.  Ubicación geográfica.
 
@@ -800,7 +805,7 @@ f.  Teléfono destino.
 
 g.  Tiempo máximo (si aplica).
 
-8.  El formato del registro de estos datos de la bitácora debe ser JSON y almacenado
+8. El formato del registro de estos datos de la bitácora debe ser JSON y almacenado
 
 así, por ejemplo:
 
@@ -826,7 +831,7 @@ Destino:
 
 Tiempo:”00:00:00”}
 
-9.  El registro de bitácora debe realizarse en segundo plano en un hilo independiente
+9. El registro de bitácora debe realizarse en segundo plano en un hilo independiente
 
 y  no  debe  interrumpir  la  ejecución  de  las  operaciones  del  autorizador.  Las
 
@@ -856,11 +861,11 @@ Corroborar la funcionalidad de las transacciones del identificador
 
 Criterios de aceptación
 
-1.  Debe crear una interfaz que simulará varios teléfonos realizando llamadas. Las
+1. Debe crear una interfaz que simulará varios teléfonos realizando llamadas. Las
 
 operaciones  serían  marcar  número,  realizar  llamada,  y  rebajo  de  saldo  de
 
-acuerdo con la duración. Si se escribe #9090* debe consultar el saldo e indicarse
+acuerdo con la duración. Si se escribe #9090\* debe consultar el saldo e indicarse
 
 en pantalla el resultado.
 
@@ -868,33 +873,32 @@ Página 13
 
 II Cuatrimestre, 2025
 
-Programación IV
 
-2.  Cada una de las transacciones debe tener una pantalla independiente.
+Programación IV
 
-3.  Cada  llamada  capturará  los  datos  que  solicita  únicamente.  No  es  necesario
+2. Cada una de las transacciones debe tener una pantalla independiente.
+3. Cada  llamada  capturará  los  datos  que  solicita  únicamente.  No  es  necesario
 
 validarlos, el software de identificación realizará la validación.
 
-4.  Cada  interfaz  debe  armar  la  trama  que  requiere  el  identificador  y  enviársela  y
+4. Cada  interfaz  debe  armar  la  trama  que  requiere  el  identificador  y  enviársela  y
 
 mostrar el resultado al terminar la operación.
 
-5.  Recuerde que los datos sensibles deben transmitirse cifrados.
+5. Recuerde que los datos sensibles deben transmitirse cifrados.
 
 Aspectos técnicos generales obligatorios por cumplir
 
-1.  El simulador debe desarrollarse en C#.
-
-2.  El socket del identificador debe realizarlo en Python BD MySQL.
-
-3.  El socket del Proveedor debe realizarlo en Java BD SQL Server.
+1. El simulador debe desarrollarse en C#.
+2. El socket del identificador debe realizarlo en Python BD MySQL.
+3. El socket del Proveedor debe realizarlo en Java BD SQL Server.
 
 Página 14
 
 II Cuatrimestre, 2025
 
-Diagrama general de arquitectura (Alto nivel)
+
+Diagrama general de arquitectura (Alto nivel)
 
 Programación IV
 
@@ -902,7 +906,7 @@ Entregables
 
 A continuación, se lista lo que debe entregar en el proyecto.
 
-1.  Documentación de análisis y diseño.
+1. Documentación de análisis y diseño.
 
 a.  Portada.
 
@@ -918,19 +922,17 @@ f.  Conclusiones y recomendaciones.
 
 g.  Bibliografía.
 
-2.  Implementación de bases de datos.
-
-3.  Código fuente del Identificador.
-
-4.  Código fuente del Proveedor Telefónico.
-
-5.  Código fuente del Simulador de llamadas.
+2. Implementación de bases de datos.
+3. Código fuente del Identificador.
+4. Código fuente del Proveedor Telefónico.
+5. Código fuente del Simulador de llamadas.
 
 Página 15
 
 II Cuatrimestre, 2025
 
-Aspectos administrativos
+
+Aspectos administrativos
 
 Programación IV
 
