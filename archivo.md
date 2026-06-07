@@ -45,6 +45,7 @@ Página 1
 II Cuatrimestre, 2025
 
 
+
 A continuación, se detallas las historias de usuario y los criterios de aceptación que
 
 las acompañan.
@@ -115,6 +116,7 @@ Página 2
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 Grupo  D  (Europa,  Singapur,  Tailandia,  Australia  y  Nueva  Zelanda)  con
@@ -131,7 +133,7 @@ o  Llamadas a Fijos: El costo por minuto excedente es de ₡8,72.
 
 o  Llamadas a Móviles: El costo por minuto excedente es de ₡25,13.
 
-•  Si la llamada es al mismo proveedor, puede utilizar bonos o saldos.
+•  Sii la llamada es al mismo proveedor, puede utilizar bonos o saldos.
 
 b.  Si hay fondos suficientes o si es postpago se debe responder “OK” y
 
@@ -178,6 +180,7 @@ los  19  espacios  se  debe  rellenar  con  ceros  a  la  izquierda.  Ejemplo:
 Página 3
 
 II Cuatrimestre, 2025
+
 
 
 b.  Cualquier otra situación se debe responder “ERROR”.
@@ -275,6 +278,7 @@ Página 4
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 minutos,  y  los  últimos  dos  para  los
@@ -340,6 +344,7 @@ como tramas de salida.
 Página 5
 
 II Cuatrimestre, 2025
+
 
 
 Programación IV
@@ -413,6 +418,7 @@ Página 6
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 g.  Si alguno de los datos no es válido, debe indicar alguno de los siguientes
@@ -476,6 +482,7 @@ o JSON:
 Página 7
 
 II Cuatrimestre, 2025
+
 
 
 Programación IV
@@ -549,6 +556,7 @@ Página 8
 II Cuatrimestre, 2025
 
 
+
 •  Se mantienen las indicaciones técnicas expresadas en HU Identificador1.
 
 •  El recurso que implemente la lista o información de las llamadas activas debe
@@ -618,6 +626,7 @@ Página 9
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 a.  Número de teléfono (debe enviarse y almacenarse cifrado).
@@ -653,6 +662,7 @@ Anotaciones técnicas:
 Página 10
 
 II Cuatrimestre, 2025
+
 
 
 Programación IV
@@ -726,6 +736,7 @@ Página 11
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 ii.  2: Datos de tarjeta telefónica no coinciden.
@@ -791,6 +802,7 @@ b.  Identificador del teléfono.
 Página 12
 
 II Cuatrimestre, 2025
+
 
 
 c.  Identificador de la tarjeta (debe enviarse y almacenarse cifrado).
@@ -874,6 +886,7 @@ Página 13
 II Cuatrimestre, 2025
 
 
+
 Programación IV
 
 2. Cada una de las transacciones debe tener una pantalla independiente.
@@ -896,6 +909,7 @@ Aspectos técnicos generales obligatorios por cumplir
 Página 14
 
 II Cuatrimestre, 2025
+
 
 
 Diagrama general de arquitectura (Alto nivel)
@@ -930,6 +944,7 @@ g.  Bibliografía.
 Página 15
 
 II Cuatrimestre, 2025
+
 
 
 Aspectos administrativos
