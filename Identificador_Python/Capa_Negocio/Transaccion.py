@@ -19,3 +19,9 @@ class Transaccion:
 
     def validarSaldo(self):
         return self.__Tipo == "saldo"
+
+    def validarLlamada(self):
+        return self.__Tipo == "llamada"
+
+    def validarFinalizacion(self):
+        return self.__Tipo == "finalizacion"

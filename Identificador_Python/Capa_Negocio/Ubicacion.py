@@ -1,4 +1,8 @@
 class Ubicacion:
+    LATITUD_MINIMA = 8.0
+    LATITUD_MAXIMA = 11.3
+    LONGITUD_MINIMA = -86.2
+    LONGITUD_MAXIMA = -82.4
 
     def __init__(self, latitud, longitud):
         self.Latitud = latitud
@@ -21,4 +25,7 @@ class Ubicacion:
         self.__Longitud = float(valor)
 
     def validarUbicacion(self):
-        return 8 <= self.__Latitud <= 11 and -86 <= self.__Longitud <= -82
+        return (
+            self.LATITUD_MINIMA <= self.__Latitud <= self.LATITUD_MAXIMA
+            and self.LONGITUD_MINIMA <= self.__Longitud <= self.LONGITUD_MAXIMA
+        )

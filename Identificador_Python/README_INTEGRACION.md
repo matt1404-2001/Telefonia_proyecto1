@@ -16,6 +16,17 @@
 python Capa_Presentacion/ServidorIdentificador.py
 ```
 
+5. Ejecutar el simulador C#:
+
+```bash
+cd ../Simulador_CSharp
+dotnet run
+```
+
+El simulador ya trae precargados los datos de prueba del script MySQL y envia con
+AES los campos sensibles: `telefono`, `identificadorTelefono` e
+`identificadorTarjeta`.
+
 ## Trama de consulta de saldo hacia Python
 
 ```json
@@ -37,6 +48,36 @@ python Capa_Presentacion/ServidorIdentificador.py
   "identificadorTarjeta": "1234567890123456789",
   "ubicacion": "9.935,-84.091",
   "tipoTransaccion": "solicitud",
+  "telefonoDestino": "4915112345678"
+}
+```
+
+## Trama de inicio de llamada hacia Python
+
+Luego de una solicitud autorizada, el simulador envia:
+
+```json
+{
+  "telefono": "88889999",
+  "identificadorTelefono": "1234567890123456",
+  "identificadorTarjeta": "1234567890123456789",
+  "ubicacion": "9.935,-84.091",
+  "tipoTransaccion": "llamada",
+  "telefonoDestino": "4915112345678",
+  "tiempoMaximo": "001025",
+  "tarifa": "0000000054"
+}
+```
+
+## Trama de finalizacion de llamada hacia Python
+
+```json
+{
+  "telefono": "88889999",
+  "identificadorTelefono": "1234567890123456",
+  "identificadorTarjeta": "1234567890123456789",
+  "ubicacion": "9.935,-84.091",
+  "tipoTransaccion": "finalizacion",
   "telefonoDestino": "4915112345678"
 }
 ```
